@@ -49,10 +49,11 @@ python3 -m venv .venv
 
 or
 
-````
+```
 
 python -m venv .venv
 
-```for Windows users.
+```
+
+**for Windows users.**
 Under that file, set `include-system-site-packages = true`
-````
