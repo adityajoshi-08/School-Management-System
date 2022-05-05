@@ -37,3 +37,18 @@ Install all the python packages using `pip3` for _Linux and Mac_ users and unins
 
 To fix this you might try installing _mysql-connector-python-rf_ by running
 `pip install mysql-connector-python-rf` for Windows users or `pip3 install mysql-connector-python-rf` for Linux/ Mac users.
+
+You might also check for the _pyvenv.cfg_ file. If not, run the following command in terminal open in your project.
+
+````
+python3 -m venv .venv
+
+``` for Mac and Linux
+or
+````
+
+python -m venv .venv
+
+```for Windows users.
+Under that file, set `include-system-site-packages = true`
+```
