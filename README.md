@@ -43,7 +43,7 @@ You might also check for the _pyvenv.cfg_ file. If not, run the following comman
 ````
 python3 -m venv .venv
 
-``` for Mac and Linux
+``` **for Mac and Linux**
 or
 ````
 
