@@ -1,6 +1,6 @@
 # School-Management-System
 
-This is a project I made in my School.
+This project is for the office relatede works in a School. This is a concept and the code can be modified according to the needs to use in different places like offices, college, hospital etc.
 
 # System Requirements
 
