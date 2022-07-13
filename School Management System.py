@@ -1,3 +1,4 @@
+''' 
 # Structure of Table just in case there is a need to create in other system
 # +--------------+--------------+------+-----+---------+-------+
 # | Field        | Type         | Null | Key | Default | Extra |
@@ -12,6 +13,7 @@
 # | Items_Broken | varchar(100) | YES  |     | NULL    |       |
 # +--------------+--------------+------+-----+---------+-------+
 # MySQL query to create table -->
+
 #  create table school(Name VARCHAR(50),
 #  Class VARCHAR(20), Section VARCHAR(10), Scholar_No INT, Fees_Paid INT,
 #  Fees_Due INT, Caution_Fee INT, Items_Broken
@@ -19,7 +21,9 @@
 
 # To start mysql in Linux -->
 # source .bash_profile
-# mysql -u root -p
+# mysql -u root -p   
+# 
+# '''
 
 import mysql.connector
 
@@ -33,6 +37,11 @@ final_choice = 1
 print('\t*************\n'
       '\t* Main Menu *\n'
       '\t*************')
+
+#   This is the main loop
+#   It will keep on runnning the program till
+#   we want to use the service
+#   1---> We need to run the program(default)
 while final_choice == 1:
     print("1. Insert a new record")
     print("2. Update some records")
@@ -40,6 +49,8 @@ while final_choice == 1:
     print("4. View full table")
 
     choice = input("Enter your choice:\n")
+
+    # To check if the user has entered a valid integer choice
     while True:
         if choice.isdigit():
             choice = int(choice)
@@ -67,7 +78,11 @@ while final_choice == 1:
         else:
             break
 
+        # choice 1 means inserting a record
+
     if choice == 1:
+
+        # seetable -- > Display the table
         seetable = int(input('Do you want to see full table \n'
                              '1. Yes \n'
                              '2. No : \n'))
@@ -175,12 +190,18 @@ while final_choice == 1:
                 else:
                     break
             if update_query != 4:
+
+                # update_query --> What you want to update
                 while True:
                     scholar_no = int(input('Enter the Scholar Number: \n'))
 
                     mycursor.execute("SELECT Scholar_No from school")
                     for i in mycursor:
                         list_sno.append(i)
+
+                        # The point of this whole thing below is to remove
+                        # unnecessary brackets from the MySQL output and take only
+                        # the integer part
                     for j in range(len(list_sno)):
                         a_string = str(list_sno[j])
                         numbers = []
@@ -376,8 +397,8 @@ while final_choice == 1:
 
             if seetable == 1:
                 mycursor.execute("select * from school")
-            for i in mycursor:
-                print(i)
+                for i in mycursor:
+                    print(i)
             else:
                 pass
 
